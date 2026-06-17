@@ -1,0 +1,13 @@
+install conda
+
+then in the terminal do
+
+conda create -n project-name ==> here write any project name you want
+conda activate project-name
+conda install pip
+
+pip install uv
+
+cd  week2day3
+
+uv pip install -r requirements.txt
