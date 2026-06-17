@@ -42,6 +42,7 @@ raw = client.chat.completions.create(
 ).choices[0].message.content
 data = json.loads(raw)            # now it's a real Python dict
 print("2) JSON MODE:", data["sentiment"], "->", data["reason"], "\n")
+print("3) JSON OUTPUT: ", data, "\n")
 # Problem: nothing guarantees the keys or types are what you expect.
 
 
@@ -62,7 +63,7 @@ completion = client.chat.completions.parse(   # note: .parse(), not .create()
 )
 
 result = completion.choices[0].message.parsed  # <-- a real ReviewAnalysis object
-print("3) PYDANTIC:")
+print("4) PYDANTIC:")
 print("   sentiment :", result.sentiment)
 print("   confidence:", result.confidence)
 print("   pros      :", result.pros)
